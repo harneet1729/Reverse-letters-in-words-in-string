@@ -1,0 +1,29 @@
+//this is cpp code 
+
+class Solution {
+public:
+    void reverse(string& s,int i,int e) {
+        int st=i;
+        int et=e-1;
+        
+        while(st<=et){
+            swap(s[st++],s[et--]);
+        }
+    }
+    
+    string reverseWords(string s) {
+        int i=0;
+        int e=0;
+        
+        for(;e<s.length();e++){
+            if (s[e]==' '){
+                reverse(s,i,e);
+                    i=e+1;
+            }
+        }
+        reverse(s,i,e);
+        
+        return s;
+        
+    }
+};
